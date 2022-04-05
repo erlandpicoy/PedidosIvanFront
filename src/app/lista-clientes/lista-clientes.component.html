@@ -1,0 +1,23 @@
+<br>
+<br>
+<br>
+<div class="container">
+    <h3>Clientes </h3>
+
+    <table class="table" >
+        <thead>
+        <tr>
+            <th scope="col">Nombre</th>
+            <th scope="col">Apellido</th>
+            <th scope="col">DNI</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor='let cliente of listaDeClientes'>
+            <th scope="row">{{cliente.nombre}}</th>
+            <td>{{cliente.apellido}}</td>
+            <td>{{cliente.dni}}</td>
+        </tr>
+        </tbody>
+    </table>
+</div>

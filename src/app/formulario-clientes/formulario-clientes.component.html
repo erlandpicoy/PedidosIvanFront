@@ -1,0 +1,24 @@
+
+<br>
+<br>
+<br>
+
+<div class="container">
+    <h3> Nuevo Cliente </h3>
+    <form class="form-control" (ngSubmit)="onSubmit()" #clienteForm="ngForm">
+    
+        <p>Nombre</p>
+        <input type="text" name="nombre"  [(ngModel)]="model.nombre" >
+        
+        <p>Apellido</p>
+        <input type="text" name="apellido" [(ngModel)]="model.apellido" >
+    
+        <p>DNI</p>
+        <input type="text" name="dni"  [(ngModel)]="model.dni" >
+    
+        <br>
+        <br>
+        <input type="button" value="enviar" (click)="onSubmit()" > 
+    
+    </form>
+</div>
