@@ -1,0 +1,24 @@
+
+<br>
+<br>
+<br>
+
+<div class="container">
+    <h3> Nuevo Producto </h3>
+    <form class="form-control" (ngSubmit)="onSubmit()" #productoForm="ngForm">
+    
+        <p>Nombre</p>
+        <input type="text" name="nombre"  [(ngModel)]="model.nombre" >
+        
+        <p>Precio</p>
+        <input type="text" name="precioBase" [(ngModel)]="model.precioBase" >
+    
+        <p>Impuesto</p>
+        <input type="text" name="dni"  [(ngModel)]="model.impuesto" >
+    
+        <br>
+        <br>
+        <input type="button" value="enviar" (click)="onSubmit()" > 
+    
+    </form>
+</div>

@@ -1,0 +1,25 @@
+<br>
+<br>
+<br>
+<div class="container">
+    <h3>Productos </h3>
+
+    <table class="table" >
+        <thead>
+        <tr>
+            <th scope="col">Nombre</th>
+            <th scope="col">Precio</th>
+            <th scope="col">Impuesto</th>
+            <th scope="col"></th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor='let producto of listaDeProductos'>
+            <th scope="row">{{producto.nombre}}</th>
+            <td>{{producto.precioBase}}</td>
+            <td>{{producto.impuesto}}</td>
+            <td><input type="button" value="modificar" id="{{producto.idProducto}}" (click)="modificar(producto.idProducto)" > <input type="button" value="eliminar" (click)="eliminar(producto.idProducto)" ></td>
+        </tr>
+        </tbody>
+    </table>
+</div>

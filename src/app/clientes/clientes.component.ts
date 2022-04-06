@@ -4,11 +4,11 @@ import { ClienteService } from '../services/cliente.service';
 
 
 @Component({
-  selector: 'app-formulario-clientes',
-  templateUrl: './formulario-clientes.component.html',
-  styleUrls: ['./formulario-clientes.component.css']
+  selector: 'app-clientes',
+  templateUrl: './clientes.component.html',
+  styleUrls: ['./clientes.component.css']
 })
-export class FormularioClientesComponent implements OnInit {
+export class ClientesComponent implements OnInit {
 
   public enviado: boolean = false;
 

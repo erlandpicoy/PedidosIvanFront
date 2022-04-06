@@ -8,14 +8,33 @@ import { HttpClientModule } from '@angular/common/http'
 import { ClienteService } from './services/cliente.service';
 import { FormularioClientesComponent } from './formulario-clientes/formulario-clientes.component';
 import { FormsModule } from '@angular/forms';
+import { ClientesComponent } from './clientes/clientes.component';
+import { RouterModule, Routes } from '@angular/router';
+import { ProductosComponent } from './productos/productos.component';
+import { ListaProductosComponent } from './lista-productos/lista-productos.component';
+import { FormularioProductosComponent } from './formulario-productos/formulario-productos.component';
 @NgModule({
   declarations: [
     AppComponent,
     ListaClientesComponent,
-    FormularioClientesComponent
+    FormularioClientesComponent,
+    ClientesComponent,
+    ProductosComponent,
+    ListaProductosComponent,
+    FormularioProductosComponent
   ],
   imports: [
     BrowserModule,
+    RouterModule.forRoot([
+      {
+        path: 'clientes',
+        component: ClientesComponent
+      },
+      {
+        path: 'productos',
+        component: ProductosComponent
+      }
+    ]),
     AppRoutingModule,
     HttpClientModule,
     FormsModule

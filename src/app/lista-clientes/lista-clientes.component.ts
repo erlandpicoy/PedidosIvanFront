@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { ClienteService } from '../services/cliente.service';
-import { Cliente } from '../interface/Cliente';
+import { Cliente } from '../interfaces/cliente';
 
 @Component({
   selector: 'app-lista-clientes',
@@ -13,6 +13,7 @@ export class ListaClientesComponent implements OnInit {
 
   public listaDeClientes: Cliente[];
 
+  public clienteAModificar = {};
 
   constructor(public clienteService: ClienteService) { 
     this.listaDeClientes = [];
@@ -22,12 +23,24 @@ export class ListaClientesComponent implements OnInit {
     this.clienteService.listarClientes().subscribe(
       (response) => {
         this.listaDeClientes = response;
-        console.log(this.listaDeClientes);
       }
     );
   }
 
+  modificar(idCliente: any){
+    this.clienteService.obtenerCliente(idCliente).subscribe(
+      (response) => {
+        this.clienteAModificar = response;
+      }
+    );
+  }
 
-
+  eliminar(idCliente: any){
+    this.clienteService.eliminarCliente(idCliente).subscribe(
+      (response) => {
+        console.log(response);
+      }
+    )
+  }
 
 }
